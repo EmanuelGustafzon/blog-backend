@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 
 app.get('/posts', async (req, res) => {
   try {
-      const posts = await Post.find({ isPublished: true });
+      const posts = await Post.find({ isPublished: true }).maxTimeMS(30000);
         res.json(posts)
     } catch (err) {
       res.status(500).json({ message: err.message })
