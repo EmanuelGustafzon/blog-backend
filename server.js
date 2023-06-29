@@ -1,10 +1,21 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
+const session = require('express-session');
+require('dotenv').config();
 
-// delete 
-const Post = require('./models/post')
 
+// const Post = require('./models/post')
 app.use(express.json())
+app.use(cors())
+app.use(
+  session({
+    secret: process.env.sessionsKey,
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+
 
 const mongoose = require('mongoose');
 require('dotenv').config()
@@ -21,16 +32,20 @@ app.get('/', (req, res) => {
   res.json('welcome')
 })
 
-app.get('/posts', async (req, res) => {
-  try {
-      const posts = await Post.find({ isPublished: true }).maxTimeMS(30000);
-        res.json(posts)
-    } catch (err) {
-      res.status(500).json({ message: err.message })
-    }
-})
+// app.get('/posts', async (req, res) => {
+//   try {
+//       const posts = await Post.find({ isPublished: true }).maxTimeMS(30000);
+//         res.json(posts)
+//     } catch (err) {
+//       res.status(500).json({ message: err.message })
+//     }
+// })
 
+const PostRouter = require('./routes/posts')
+app.use('/posts', PostRouter)
 
+const AccountsRouter = require('./routes/accounts')
+app.use('/accounts', AccountsRouter)
 
 // Add port in terminal with export PORT=port
 const port = process.env.PORT || 5000; 

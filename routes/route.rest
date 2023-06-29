@@ -1,0 +1,84 @@
+POST https://5000-emanuelgust-blogbackend-y6fnh9pexv7.ws-eu101.gitpod.io/accounts/register
+Content-Type: application/json
+
+{
+    "username": "Ingrid",
+    "password": "ingrid",
+    "confirmPassword": "ingrid"
+}
+
+###
+
+PUT https://5000-emanuelgusta-littleblog-2kwlwg7dg0q.ws-eu98.gitpod.io/accounts/profile/update
+Content-Type: application/json
+
+{
+    "oldUsername": "Emanuel", 
+    "oldPassword": "secret", 
+    "newUsername": "Emanuel", 
+    "newPassword": "secretsecret", 
+    "repeatNewPassword": "secretsecret"
+}
+###
+
+POST https://5000-emanuelgusta-littleblog-2kwlwg7dg0q.ws-eu98.gitpod.io/accounts/logout
+
+###
+// I have account secret and Emanuel secretsecret
+POST https://5000-emanuelgust-blogbackend-y6fnh9pexv7.ws-eu101.gitpod.io/accounts/login
+Content-Type: application/json
+
+{
+    "username": "Ingrid",
+    "password": "ingrid"
+}
+
+###
+
+GET https://5000-emanuelgusta-littleblog-2kwlwg7dg0q.ws-eu98.gitpod.io/accounts/profile
+
+
+###
+
+
+GET https://5000-emanuelgusta-littleblog-2kwlwg7dg0q.ws-eu98.gitpod.io/accounts/testProtocol
+
+
+###
+
+
+POST https://5000-emanuelgusta-littleblog-2kwlwg7dg0q.ws-eu98.gitpod.io/posts/create
+Content-Type: application/json
+
+{
+    "title": "test",
+    "desc": "test",
+    "contributors": ["newAccount"],
+    "isPublished": true
+}
+
+
+###
+
+
+DELETE https://5000-emanuelgusta-littleblog-2kwlwg7dg0q.ws-eu98.gitpod.io/posts/64779077496b128e2c3d1e54
+
+
+###
+
+
+GET https://5000-emanuelgusta-littleblog-2kwlwg7dg0q.ws-eu98.gitpod.io/posts/
+
+
+###
+
+
+PUT https://5000-emanuelgusta-littleblog-2kwlwg7dg0q.ws-eu98.gitpod.io/posts/edit/64779077496b128e2c3d1e54
+Content-Type: application/json
+
+{
+    "title": "greeee",
+    "desc": "ndddd",
+    "contributors": [],
+    "isPublished": false
+}
