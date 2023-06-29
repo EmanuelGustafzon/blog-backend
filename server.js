@@ -7,7 +7,16 @@ require('dotenv').config();
 
 // const Post = require('./models/post')
 app.use(express.json())
-app.use(cors())
+
+app.use(
+  cors({
+    origin: process.env.ALLOWED_ORIGIN || 'https://3000-emanuelgusta-littleblog-2kwlwg7dg0q.ws-eu101.gitpod.io/',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+  })
+);
+
 app.use(
   session({
     secret: process.env.sessionsKey,
