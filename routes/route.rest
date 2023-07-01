@@ -9,7 +9,7 @@ Content-Type: application/json
 
 ###
 
-PUT https://5000-emanuelgusta-littleblog-2kwlwg7dg0q.ws-eu98.gitpod.io/accounts/profile/update
+PUT https://5000-emanuelgust-blogbackend-y6fnh9pexv7.ws-eu101.gitpod.io/accounts/profile/update
 Content-Type: application/json
 
 {
@@ -21,7 +21,7 @@ Content-Type: application/json
 }
 ###
 
-POST https://5000-emanuelgusta-littleblog-2kwlwg7dg0q.ws-eu98.gitpod.io/accounts/logout
+POST https://5000-emanuelgust-blogbackend-y6fnh9pexv7.ws-eu101.gitpod.io/accounts/logout
 
 ###
 // I have account secret and Emanuel secretsecret
@@ -35,13 +35,13 @@ Content-Type: application/json
 
 ###
 
-GET https://5000-emanuelgusta-littleblog-2kwlwg7dg0q.ws-eu98.gitpod.io/accounts/profile
+GET https://testappexpress-bc7835aaf320.herokuapp.com/accounts/profile
 
 
 ###
 
 
-GET https://5000-emanuelgusta-littleblog-2kwlwg7dg0q.ws-eu98.gitpod.io/accounts/testProtocol
+GET https://5000-emanuelgust-blogbackend-y6fnh9pexv7.ws-eu101.gitpod.io/accounts/testProtocol
 
 
 ###

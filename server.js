@@ -3,6 +3,8 @@ const app = express()
 const cors = require('cors')
 const session = require('express-session');
 require('dotenv').config();
+const MongoDBStore = require('connect-mongo');
+
 
 
 // const Post = require('./models/post')
@@ -16,15 +18,6 @@ app.use(
     credentials: true,
   })
 );
-
-app.use(
-  session({
-    secret: process.env.sessionsKey,
-    resave: false,
-    saveUninitialized: true,
-  })
-);
-
 
 const mongoose = require('mongoose');
 require('dotenv').config()
@@ -41,14 +34,17 @@ app.get('/', (req, res) => {
   res.json('welcome')
 })
 
-// app.get('/posts', async (req, res) => {
-//   try {
-//       const posts = await Post.find({ isPublished: true }).maxTimeMS(30000);
-//         res.json(posts)
-//     } catch (err) {
-//       res.status(500).json({ message: err.message })
-//     }
-// })
+app.use(
+  session({
+    secret: process.env.sessionsKey,
+    resave: false,
+    saveUninitialized: true,
+    store: new MongoDBStore({ mongoUrl: URL }),
+    cookie: {
+      maxAge: 24 * 60 * 60 * 1000,
+    },
+  })
+);
 
 const PostRouter = require('./routes/posts')
 app.use('/posts', PostRouter)
