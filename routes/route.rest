@@ -25,7 +25,7 @@ POST https://5000-emanuelgust-blogbackend-y6fnh9pexv7.ws-eu101.gitpod.io/account
 
 ###
 // I have account secret and Emanuel secretsecret
-POST https://5000-emanuelgust-blogbackend-y6fnh9pexv7.ws-eu101.gitpod.io/accounts/login
+POST https://testappexpress-bc7835aaf320.herokuapp.com/accounts/login
 Content-Type: application/json
 
 {
@@ -41,7 +41,7 @@ GET https://testappexpress-bc7835aaf320.herokuapp.com/accounts/profile
 ###
 
 
-GET https://5000-emanuelgust-blogbackend-y6fnh9pexv7.ws-eu101.gitpod.io/accounts/testProtocol
+GET https://testappexpress-bc7835aaf320.herokuapp.com/accounts/testProtocol
 
 
 ###
