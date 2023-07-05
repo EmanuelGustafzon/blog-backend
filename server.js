@@ -12,7 +12,7 @@ app.use(express.json())
 
 app.use(
   cors({
-    origin: 'https://story-g7yp9t1ha-emanuelgustafzon.vercel.app',
+    origin: process.env.ALLOWED-ORGIN || 'https://story-g7yp9t1ha-emanuelgustafzon.vercel.app',
     // orgin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
