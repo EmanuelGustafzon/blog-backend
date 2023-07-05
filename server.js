@@ -12,7 +12,7 @@ app.use(express.json())
 
 app.use(
   cors({
-    origin: process.env.ALLOWED_ORIGIN || 'https://3000-emanuelgusta-littleblog-2kwlwg7dg0q.ws-eu101.gitpod.io',
+    origin: process.env.ALLOWED_ORIGIN || 'https://story-g7yp9t1ha-emanuelgustafzon.vercel.app',
     // orgin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
